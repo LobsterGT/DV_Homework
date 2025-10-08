@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Male & Female Graduates Of Each Age Group",
+  "width": "container",
+  "height": 150,
+  "data": {
+    "url": "https://raw.githubusercontent.com/LobsterGT/DV2/refs/heads/main/data/graduate_number.csv"
+  },
+  "params": [
+    {
+      "name": "Select_Year",
+      "value": 2016,
+      "bind": {
+        "input": "select",
+        "options": [2016, 2017, 2018, 2019, 2020],
+        "labels": ["2016","2017","2018","2019","2020"],
+        "name": "Select Year: "
+      }
+    },
+    {
+      "name": "Education_level",
+      "value": "Diploma",
+      "bind": {
+        "input": "select",
+        "options": ["Degree", "Diploma"],
+        "labels": ["Degree", "Diploma"],
+        "name": "Education Level: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "toNumber(datum.Year) == toNumber(Select_Year)"},
+    {"filter": "datum['Education level'] == Education_level"},
+    {
+      "calculate": "datum['Age Group'] == 'less than or equal 24' ? '0 - 24' : datum['Age Group'] == 'greater than or equal 45' ? '45 - 100' : datum['Age Group']",
+      "as": "AgeGroupLabel"
+    },
+    {
+      "calculate": "datum.Sex == 'Male' ? -datum['Graduate Number'] : datum['Graduate Number']",
+      "as": "graduate_number"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {"field": "AgeGroupLabel", "type": "ordinal", "title": "Age Group"},
+    "x": {
+      "field": "graduate_number",
+      "type": "quantitative",
+      "title": "Number Of Graduates",
+      "axis": {"format": "s", "labelExpr": "abs(datum.value)"}
+    },
+    "color": {"field": "Sex", "type": "nominal"},
+    "tooltip": [
+      {"field": "Sex"},
+      {"field": "AgeGroupLabel"},
+      {"field": "Graduate Number"}
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Number Of School in Malaysia",
+  "width": "container",
+  "projection": {"type": "equalEarth"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/LobsterGT/DV2/refs/heads/main/js/ne_1.json",
+    "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/LobsterGT/DV2/refs/heads/main/data/secondary_2018.csv"
+        },
+        "key": "state",
+        "fields": ["total_schools", "area_km2"]
+      }
+    },
+    {
+      "calculate": "(datum.total_schools / datum.area_km2) * 100",
+      "as": "schools_per_100km2"
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.5},
+  "encoding": {
+    "color": {
+      "field": "schools_per_100km2",
+      "type": "quantitative",
+      "scale": {"type": "log"}
+    },
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal", "title": "State"},
+      {"field": "schools_per_100km2", "type": "quantitative", "title": "Number of Schools"}
+    ]
+  }
+}

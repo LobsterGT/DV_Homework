@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Government Spending On Education",
+  "data": {
+    "url": "https://raw.githubusercontent.com/LobsterGT/DV2/refs/heads/main/data/share-of-education-in-government-expenditure.csv"
+  },
+  "width": "container",
+  "transform": [
+    {
+      "filter": "datum.Entity == 'Malaysia'"
+    },
+    {"filter": "datum.Year >= 2000 && datum.Year <= 2022"}
+  ],
+  "mark": {
+    "type": "area",
+    "interpolate": "monotone"
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": "Year",
+      "axis": {
+        "grid": true
+    }
+    },
+    "y": {
+      "field": "Government_spending",
+      "type": "quantitative",
+      "title": "Education Share of Gov Spending (%)"
+    },
+    "tooltip": [
+      {"field": "Year", "title": "Year"},
+      {"field": "Government_spending", "type": "quantitative", "title": "Education Share of Gov Spending (%)"}
+    ]
+  },
+  "config": {}
+}

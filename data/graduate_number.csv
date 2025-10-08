@@ -1,0 +1,81 @@
+Sex,Education level,Age Group,Year,Graduate Number
+Male,Degree,less than or equal 24,2016,60.1
+Male,Degree,25 - 34,2016,399.1
+Male,Degree,35 - 44,2016,268
+Male,Degree,greater than or equal 45,2016,297.3
+Male,Diploma,less than or equal 24,2016,218.4
+Male,Diploma,25 - 34,2016,405
+Male,Diploma,35 - 44,2016,212.8
+Male,Diploma,greater than or equal 45,2016,191.3
+Female,Degree,less than or equal 24,2016,90.2
+Female,Degree,25 - 34,2016,576.7
+Female,Degree,35 - 44,2016,300.4
+Female,Degree,greater than or equal 45,2016,182.8
+Female,Diploma,less than or equal 24,2016,260.1
+Female,Diploma,25 - 34,2016,466.5
+Female,Diploma,35 - 44,2016,196.1
+Female,Diploma,greater than or equal 45,2016,157.6
+Male,Degree,less than or equal 24,2017,58.5
+Male,Degree,25 - 34,2017,447.5
+Male,Degree,35 - 44,2017,291.5
+Male,Degree,greater than or equal 45,2017,325.2
+Male,Diploma,less than or equal 24,2017,229.1
+Male,Diploma,25 - 34,2017,410.2
+Male,Diploma,35 - 44,2017,224.8
+Male,Diploma,greater than or equal 45,2017,211.3
+Female,Degree,less than or equal 24,2017,98.3
+Female,Degree,25 - 34,2017,640.4
+Female,Degree,35 - 44,2017,319.1
+Female,Degree,greater than or equal 45,2017,204.1
+Female,Diploma,less than or equal 24,2017,274
+Female,Diploma,25 - 34,2017,470.2
+Female,Diploma,35 - 44,2017,229.1
+Female,Diploma,greater than or equal 45,2017,168.5
+Male,Degree,less than or equal 24,2018,58.6
+Male,Degree,25 - 34,2018,438.7
+Male,Degree,35 - 44,2018,316.3
+Male,Degree,greater than or equal 45,2018,346.5
+Male,Diploma,less than or equal 24,2018,230.5
+Male,Diploma,25 - 34,2018,439.4
+Male,Diploma,35 - 44,2018,258.3
+Male,Diploma,greater than or equal 45,2018,209
+Female,Degree,less than or equal 24,2018,114.1
+Female,Degree,25 - 34,2018,669.9
+Female,Degree,35 - 44,2018,357.6
+Female,Degree,greater than or equal 45,2018,218.8
+Female,Diploma,less than or equal 24,2018,266.9
+Female,Diploma,25 - 34,2018,486.9
+Female,Diploma,35 - 44,2018,256.4
+Female,Diploma,greater than or equal 45,2018,185.1
+Male,Degree,less than or equal 24,2019,66.1
+Male,Degree,25 - 34,2019,472.5
+Male,Degree,35 - 44,2019,334.8
+Male,Degree,greater than or equal 45,2019,361.5
+Male,Diploma,less than or equal 24,2019,241.5
+Male,Diploma,25 - 34,2019,440.7
+Male,Diploma,35 - 44,2019,260.5
+Male,Diploma,greater than or equal 45,2019,245.8
+Female,Degree,less than or equal 24,2019,123.5
+Female,Degree,25 - 34,2019,677.5
+Female,Degree,35 - 44,2019,402.1
+Female,Degree,greater than or equal 45,2019,255.4
+Female,Diploma,less than or equal 24,2019,274.5
+Female,Diploma,25 - 34,2019,496.4
+Female,Diploma,35 - 44,2019,276.2
+Female,Diploma,greater than or equal 45,2019,201
+Male,Degree,less than or equal 24,2020,66.4
+Male,Degree,25 - 34,2020,467
+Male,Degree,35 - 44,2020,367.5
+Male,Degree,greater than or equal 45,2020,394.6
+Male,Diploma,less than or equal 24,2020,233.9
+Male,Diploma,25 - 34,2020,466.5
+Male,Diploma,35 - 44,2020,283.2
+Male,Diploma,greater than or equal 45,2020,255.5
+Female,Degree,less than or equal 24,2020,100.6
+Female,Degree,25 - 34,2020,697.9
+Female,Degree,35 - 44,2020,429.8
+Female,Degree,greater than or equal 45,2020,304.2
+Female,Diploma,less than or equal 24,2020,257.9
+Female,Diploma,25 - 34,2020,513.3
+Female,Diploma,35 - 44,2020,299
+Female,Diploma,greater than or equal 45,2020,219.3

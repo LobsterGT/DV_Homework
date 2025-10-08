@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Total Enrolment Of Different Stage Of Education",
+  "width": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/LobsterGT/DV2/refs/heads/main/data/enrolment_school_district.csv"
+  },
+  "transform": [
+    {"filter": "datum.state == 'Malaysia'"},
+    {"filter": "datum.sex == 'both'"},
+    {
+      "aggregate": [
+        {"op": "mean", "field": "students", "as": "avg_students"}
+      ],
+      "groupby": ["stage"]
+    }
+  ],
+  "mark": {
+    "type": "arc",
+    "innerRadius": 60
+  },
+  "encoding": {
+    "theta": {"field": "avg_students", "type": "quantitative"},
+    "color": {"field": "stage", "type": "nominal"},
+    "tooltip": [
+      {"field": "stage", "title": "Stage"},
+      {"field": "avg_students", "type": "quantitative", "title": "Average enrolment"}
+    ]
+  }
+}
