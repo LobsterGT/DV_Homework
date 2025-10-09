@@ -28,7 +28,10 @@
     "color": {
       "field": "schools_per_100km2",
       "type": "quantitative",
-      "scale": {"type": "log"}
+      "scale": {
+        "type": "log"
+        }
+
     },
     "tooltip": [
       {"field": "properties.name", "type": "nominal", "title": "State"},

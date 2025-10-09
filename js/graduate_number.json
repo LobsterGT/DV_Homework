@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Male & Female Graduates Of Each Age Group",
+  "title": "Male Graduates Of Each Age Group",
   "width": "container",
-  "height": 150,
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/LobsterGT/DV2/refs/heads/main/data/graduate_number.csv"
   },
@@ -13,7 +13,7 @@
       "bind": {
         "input": "select",
         "options": [2016, 2017, 2018, 2019, 2020],
-        "labels": ["2016","2017","2018","2019","2020"],
+        "labels": ["2016", "2017", "2018", "2019", "2020"],
         "name": "Select Year: "
       }
     },
@@ -31,29 +31,28 @@
   "transform": [
     {"filter": "toNumber(datum.Year) == toNumber(Select_Year)"},
     {"filter": "datum['Education level'] == Education_level"},
+    {"filter": "datum.Sex == 'Male'"},
     {
       "calculate": "datum['Age Group'] == 'less than or equal 24' ? '0 - 24' : datum['Age Group'] == 'greater than or equal 45' ? '45 - 100' : datum['Age Group']",
       "as": "AgeGroupLabel"
-    },
-    {
-      "calculate": "datum.Sex == 'Male' ? -datum['Graduate Number'] : datum['Graduate Number']",
-      "as": "graduate_number"
     }
   ],
-  "mark": "bar",
+  "mark": {"type": "bar", "tooltip": true, "color": "#4C78A8"},
   "encoding": {
-    "y": {"field": "AgeGroupLabel", "type": "ordinal", "title": "Age Group"},
     "x": {
-      "field": "graduate_number",
-      "type": "quantitative",
-      "title": "Number Of Graduates",
-      "axis": {"format": "s", "labelExpr": "abs(datum.value)"}
+      "field": "AgeGroupLabel",
+      "type": "ordinal",
+      "title": "Age Group",
+      "axis": {"labelAngle": 0}
     },
-    "color": {"field": "Sex", "type": "nominal"},
+    "y": {
+      "field": "Graduate Number",
+      "type": "quantitative",
+      "title": "Number of Graduates"
+    },
     "tooltip": [
-      {"field": "Sex"},
-      {"field": "AgeGroupLabel"},
-      {"field": "Graduate Number"}
+      {"field": "AgeGroupLabel", "title": "Age Group"},
+      {"field": "Graduate Number", "title": "Number of Graduates"}
     ]
   }
 }
